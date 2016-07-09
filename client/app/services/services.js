@@ -2,6 +2,26 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
+  //need to fetch the links
+    //using mongodb to query and select links specific to the user
+  //display the links
+
+  var getAll = function(link) {
+    return $http({
+      method: 'GET',
+      url: '/api/links',
+      data: link
+    })
+    .then(function(resp) {
+      return resp.data;
+    }).catch(function(error) {
+      console.log(error);
+    });
+  };
+
+  return {
+    getAll: getAll
+  };
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!

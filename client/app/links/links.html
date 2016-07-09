@@ -1,3 +1,9 @@
-<div id='container'>
+<div id='container' ng-controller="LinksController">
   <!-- Your html here -->
+  <div class='info' >
+    <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+    <div class='title'>{{links.title}}</div>
+    <div class='original'>{{links.url}}</div>
+    <a href='{{baseUrl}}/{{code}}'>{{links.baseUrl}}/{{links.code}}</a>
+  </div>
 </div>
