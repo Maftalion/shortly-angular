@@ -7,7 +7,7 @@ angular.module('shortly.shorten', ['shortly.services'])
   $scope.addLink = function() {
     Links.addOne($scope.link)
     .then(function(res) {
-      $scope.link = res.data;
+      $scope.link = res;
       $location.path('/links');
     }).catch(function(err) {
       console.log(err);
