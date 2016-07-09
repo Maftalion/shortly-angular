@@ -45,7 +45,6 @@ describe('Services', function () {
 
       $httpBackend.flush();
     });
-
     it('should add a new link with `addOne`', function () {
       var github = { url: 'https://github.com/hackreactor-labs' };
 
