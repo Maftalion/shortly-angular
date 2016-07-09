@@ -4,17 +4,19 @@ angular.module('shortly.shorten', ['shortly.services', 'shortly.auth'])
   // Your code here
   $scope.link = {};
 
-  $scope.addLink = function() {
-    if (Auth.isAuth()) {
-      Links.addOne($scope.link)
-      .then(function(res) {
-        $scope.link = res;
-        $location.path('/links');
-      }).catch(function(err) {
-        console.log(err);
-      });
-    } else {
-      $location.path('/signin');
+  $scope.addLink = function(isValid) {
+    if (isValid) {
+      if (Auth.isAuth()) {
+        Links.addOne($scope.link)
+        .then(function(res) {
+          $scope.link = res;
+          $location.path('/links');
+        }).catch(function(err) {
+          console.log(err);
+        });
+      } else {
+        $location.path('/signin');
+      }
     }
   };
 });

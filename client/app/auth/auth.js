@@ -8,9 +8,10 @@ angular.module('shortly.auth', [])
 
   $scope.signout = function() {
     Auth.signout($scope.user);
-  };
+  };  
 
   $scope.signin = function () {
+    console.log($scope.user);
     Auth.signin($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
