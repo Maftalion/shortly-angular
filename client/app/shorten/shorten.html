@@ -1,6 +1,6 @@
-<div id='create' ng-model='shortly.shorten' ng-controller='ShortenController'>
+<div  class='creator' ng-model='shortly.shorten' ng-controller='ShortenController'>
   <form >
-    <input class='text' type='url' name='url' ng-model="link.url" required>
-    <button ng-disabled="addLink.$invalid" ng-click="addLink(link.url)">Shorten</button>
+    <input class='message linkForm' type='url' name='url' ng-model="link.url" placeholder="search" required>
+    <button class='linkForm' ng-disabled="addLink.$invalid" ng-click="addLink(link.url)">Shorten</button>
   </form>
 </div>
