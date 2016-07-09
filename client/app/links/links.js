@@ -1,11 +1,14 @@
-angular.module('shortly.links', ['shortly.services'])
+angular.module('shortly.links', ['shortly.services', 'shortly.auth'])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Links, Auth) {
   // Your code here
   $scope.data = {};
   
   Links.getAll().then(function(response) {
-    console.log('showwww response....', response);
-    $scope.data.links = response;
+    if (Auth.isAuth()) {
+      $scope.data.links = response;
+    } else {
+      $location.path('/signin');
+    }
   });
 });
