@@ -1,4 +1,4 @@
-<div id='create' ng-controller='ShortenController'>
+<div id='create' ng-model='shortly.shorten' ng-controller='ShortenController'>
   <form>
     <input class='text' type='text' name='url' ng-model="newLink">
     <input type='submit' value='Shorten' ng-click="addLink(newLink)">

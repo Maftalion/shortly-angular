@@ -5,7 +5,7 @@ angular.module('shortly.links', ['shortly.services'])
   $scope.data = {};
   
   Links.getAll().then(function(response) {
-    console.log(response);
+    console.log('showwww response....', response);
     $scope.data.links = response;
   });
 });
